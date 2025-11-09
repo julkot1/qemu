@@ -1,0 +1,63 @@
+
+hello.efi:     file format pei-x86-64
+
+
+Disassembly of section .text:
+
+0000000140001000 <.text>:
+   140001000:	48 83 ec 68          	sub    $0x68,%rsp
+   140001004:	48 89 54 24 58       	mov    %rdx,0x58(%rsp)
+   140001009:	48 89 4c 24 50       	mov    %rcx,0x50(%rsp)
+   14000100e:	48 8b 05 eb 0f 00 00 	mov    0xfeb(%rip),%rax        # 0x140002000
+   140001015:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+   14000101a:	48 8b 05 e7 0f 00 00 	mov    0xfe7(%rip),%rax        # 0x140002008
+   140001021:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+   140001026:	48 8b 05 e3 0f 00 00 	mov    0xfe3(%rip),%rax        # 0x140002010
+   14000102d:	48 89 44 24 40       	mov    %rax,0x40(%rsp)
+   140001032:	66 8b 05 df 0f 00 00 	mov    0xfdf(%rip),%ax        # 0x140002018
+   140001039:	66 89 44 24 48       	mov    %ax,0x48(%rsp)
+   14000103e:	48 8b 44 24 58       	mov    0x58(%rsp),%rax
+   140001043:	48 8b 40 40          	mov    0x40(%rax),%rax
+   140001047:	48 8b 40 30          	mov    0x30(%rax),%rax
+   14000104b:	48 8b 4c 24 58       	mov    0x58(%rsp),%rcx
+   140001050:	48 8b 49 40          	mov    0x40(%rcx),%rcx
+   140001054:	ff d0                	call   *%rax
+   140001056:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+   14000105b:	48 83 7c 24 28 00    	cmpq   $0x0,0x28(%rsp)
+   140001061:	74 0c                	je     0x14000106f
+   140001063:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+   140001068:	48 89 44 24 60       	mov    %rax,0x60(%rsp)
+   14000106d:	eb 3a                	jmp    0x1400010a9
+   14000106f:	48 8b 44 24 58       	mov    0x58(%rsp),%rax
+   140001074:	48 8b 40 40          	mov    0x40(%rax),%rax
+   140001078:	48 8b 40 08          	mov    0x8(%rax),%rax
+   14000107c:	48 8d 54 24 30       	lea    0x30(%rsp),%rdx
+   140001081:	48 8b 4c 24 58       	mov    0x58(%rsp),%rcx
+   140001086:	48 8b 49 40          	mov    0x40(%rcx),%rcx
+   14000108a:	ff d0                	call   *%rax
+   14000108c:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+   140001091:	48 83 7c 24 28 00    	cmpq   $0x0,0x28(%rsp)
+   140001097:	74 0c                	je     0x1400010a5
+   140001099:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+   14000109e:	48 89 44 24 60       	mov    %rax,0x60(%rsp)
+   1400010a3:	eb 04                	jmp    0x1400010a9
+   1400010a5:	eb 00                	jmp    0x1400010a7
+   1400010a7:	eb fe                	jmp    0x1400010a7
+   1400010a9:	48 8b 44 24 60       	mov    0x60(%rsp),%rax
+   1400010ae:	48 83 c4 68          	add    $0x68,%rsp
+   1400010b2:	c3                   	ret
+
+Disassembly of section .rdata:
+
+0000000140002000 <.rdata>:
+   140002000:	48 00 65 00          	rex.W add %spl,0x0(%rbp)
+   140002004:	6c                   	insb   (%dx),(%rdi)
+   140002005:	00 6c 00 6f          	add    %ch,0x6f(%rax,%rax,1)
+   140002009:	00 20                	add    %ah,(%rax)
+   14000200b:	00 57 00             	add    %dl,0x0(%rdi)
+   14000200e:	6f                   	outsl  (%rsi),(%dx)
+   14000200f:	00 72 00             	add    %dh,0x0(%rdx)
+   140002012:	6c                   	insb   (%dx),(%rdi)
+   140002013:	00 64 00 21          	add    %ah,0x21(%rax,%rax,1)
+   140002017:	00 00                	add    %al,(%rax)
+	...

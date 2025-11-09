@@ -24,7 +24,10 @@ config PCI_TESTDEV
     bool
     default y if TEST_DEVICES
     depends on PCI
-
+config GPU
+    bool
+    default y if TEST_DEVICES
+    depends on PCI && MSI_NONBROKEN
 config EDU
     bool
     default y if TEST_DEVICES
