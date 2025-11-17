@@ -12,7 +12,7 @@ sudo pacman -S edk2-ovmf
 ## Configure quemu build
 
 ```
-./configure --target-list="x86_64-softmmu" --enable-debug  --extra-cflags="-Wno-error=redundant-decls"
+./configure --target-list="x86_64-softmmu" --enable-debug  --extra-cflags="-Wno-error=redundant-decls" --enable-gtk
 ```
 
 ## Building quemu
@@ -27,7 +27,6 @@ cd build && make -j8
 ./build/qemu-system-x86_64 \
                     -m 512M \
                     -bios /usr/share/edk2-ovmf/x64/OVMF.4m.fd \
-                    -drive file=fat:rw:image,format=raw \
                     -device AREK \
                     -monitor stdio
 ```
